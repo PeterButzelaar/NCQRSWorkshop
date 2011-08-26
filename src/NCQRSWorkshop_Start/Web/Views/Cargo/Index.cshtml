@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ReadModel.Cargo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cargo's</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Origin
+        </th>
+        <th>
+            Destination
+        </th>
+        <th>
+            Weight
+        </th>
+        <th>
+            Size
+        </th>
+        <th>
+            VoyageId
+        </th>
+        <th>
+            DepartureDate
+        </th>
+        <th>
+            ArrivalDate
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Origin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VoyageId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalDate)
+        </td>
+    </tr>
+}
+
+</table>
