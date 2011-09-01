@@ -7,6 +7,7 @@ using Ncqrs.Eventing.Storage;
 using Ncqrs.Eventing.Storage.SQL;
 using ReadModel.Denormalizers;
 using System.Reflection;
+using System.Configuration;
 
 namespace Web
 {
@@ -36,7 +37,7 @@ namespace Web
 
 		private static IEventStore InitializeEventStore()
 		{
-			var store = new MsSqlServerEventStore(@"Data Source=.\sqlexpress;Initial Catalog=NCQRSWorkshopEventStore;Integrated Security=True");
+			var store = new MsSqlServerEventStore(ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString);
 			return store;
 		}
 
